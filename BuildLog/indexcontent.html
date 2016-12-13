@@ -5,23 +5,20 @@
 	
 	<SECTION ID="Introduction">
 		<H3>Introduction</H3>
-		<p>This build instruction will show how to build the “Prototype Lab Flow” project which consists of a webcam, 
-			raspberry pi and a PCB. This project was designed by myself, Mathues Rondinille and Sukhdeep Sehra. 
-			The purposes of this project make the flow of the prototype lab more efficient to take out items from 
-			the lab and store them in a database by using a QR code. I will show step by step how the project is made.</p>
+		<p>This page will give instructions on how to build the Prototype lab flow. 
+		This project was built and designed by Kenneth Mendoza, Sukhdeep Seehera and Myself (Matheus Almeida). 
+		By replicating our instructions, user should be able to replicate our end result as well..</p>
 	</SECTION>
 	
 	<SECTION ID="System_Diagram">
 		<H3>System Diagram</H3>
-		  <img src="../BuildLogFiles/sysem diagram.PNG" alt="System Diagram" style="width:900px;height:350px;">
+		  <img src="lmdm0067.github.io/System Diagram.png" alt="System Diagram" style="width:900px;height:350px;">
 	</SECTION>
 	
 	<SECTION ID="Build_Material">
-		<H3>Build Materials/Budget</H3>
-		<p>The materials I’ve used for this project are webcam, raspberry pi, QR codes and PCB. The PCB is not required to do 
-			this project; I just used it for the LED for light indicator when the QR code has been scanned. The PCB was 
-			provided by the school. The raspberry pi needs a mouse, keyboard and a monitor. My project is not expensive,
-			here’s a table that shows how much I spent:</p>
+		<H3>Budget</H3>
+		<p>Our project is fairly simple on the hardware side, but the user is required to have access to a network and to have an HDMI display, 
+		a mouse and a keyboard to set up and use the raspberry PI.</p>
 		<table>
 			<tr>
 				<th>Item</th>
@@ -42,9 +39,8 @@
 	
 	<SECTION ID="Time_Commiment">
 		<H3>Time Commitment</H3>
-		<p>The project took 15 weeks in total but with the instructions that I will be providing will decrease the time required
-			needed. Most of the time I spent researching and trying to make the code compatible with the hardware. Below is 
-			the breakdown how much time I spent:
+		<p>Our project was completed throughout our 5th semester and took us some time to figure out how to scan the items properly and efficiently. 
+		That being said, it is not a lengthy project on our hardware side since the camera has no conflicts with the PI nor does the PCB. It will take more time coding.
 		</p>
 		<table>
 			<tr>
@@ -85,9 +81,7 @@
 	
 	<SECTION ID="Mechanical_Assembly">
 		<H3>Mechanical Assembly</H3>
-		<p>The assembly for my project is very simple. First connect the components needed for the raspberry pi which is a 
-			mouse, keyboard and a monitor. Then connect the webcam into USB port on the raspberry pi and after connect the 
-			PCB on top of the raspberry pi for LED indicator. Lastly connect the power outlet of the raspberry pi.</p>
+		<p>Once you acquired the raspberry pi 3, you will have to set it up.</p>
 	</SECTION>
 	
 	<SECTION ID="PI_Setup">
@@ -102,12 +96,11 @@
 	
 	<SECTION ID="PCB_Soldering">
 		<H3>PCB Soldering</H3>
-		<p>The PCB called Modular Sensor Hat was provided by Humber College. The board must be printed at the prototype lab
-			first. Soldering the PCB was very simple because of the schematic provided to us.  Before soldering make sure 
-			wear your safety glasses.
+		<p>The modular sensor hat was provided by humber. We had to modify by adding our names to it and once it was done, we sent it to the prototype lab where it was printed. 
+		Soldering was somewhat simple even though I didn’t have any previous experience with soldering. Took me about 3 hours to solder everything and around 30 minutes to test it.
 			
-			 <img src="../BuildLogFiles/PCB.jpg" alt="PCB" style="width:700px;height:600px;">
-			<img src="../BuildLogFiles/schematic.png" alt="schematic" style="width:700px;height:600px;">
+			 <img src="lmdm0067.github.io/pcb.png" alt="PCB" style="width:700px;height:600px;">
+			
 		</p>
 	</SECTION>
 	
@@ -122,18 +115,16 @@
 	
 	<SECTION ID="Unit_Testing">
 		<H3>Unit Testing</H3>
-		<p>First we checked if the LED in the PCB works by running sudo ./traffic2B command in the raspberry pi terminal. The 
-			traffic2B was provided by Humber College. Next we checked if the webcam is compatible with the raspberry pi by
-			installing FSWEBCAM. To install FSWEBCAM type sudo apt-get install fswebcam and upon installing type fswebcam 
-			image.jpg to run the webcam. If the webcam works it will take a picture and it will get save.</p>	
+		<p>First checked if the webcam is compatible by installing FSWEBCAM. Type: sudo apt-get install fswebcam on the pi’s terminal to install it. 
+		Once completed run the program by typing: fswebcam image.jpg. If the camera is compatible it should open and take a picture. Secondly check if the LEDs on the PCB are working properly by running the file test.py. 
+		If it works the led should blink in the color red. </p>	
 	</SECTION>
 	
 	<SECTION ID="Product_Testing">
 		<H3>Product Testing</H3>
-		<p>To test the project, power up the raspberry pi and after the raspberry pi is turned on go to terminal and type 
-			“./scanner.sh” a download link below will be provided. After running the script place a QR code in front of the
-			webcam and when the QR code gets scanned successfully the LED from PCB will blink and the data will be saved to 
-			a file txt called “scan-results.txt”.</p>	
+		<p>After powering up run the shell script ./scanner.sh which is going to run test.py and exit.sh. It is then going to open the zbar library where you will scan your QR code. Once scanned it will create a .txt file with the QR info. 
+		Every time you want to scan a QR you have to re run the program since it is easy for our testing purposes at the moment. 
+		Test with multiple QRs to test its capabilities.</p>	
 	</SECTION>
 	
 	<SECTION ID="Reproducibility">
@@ -144,10 +135,9 @@
 	<SECTION ID="Downloads">
 		<H3>Downloads</H3>
 		<p>
-		<a href="../BuildLogFiles/scanner.sh" download="scanner.sh">Download - scanner.sh</a><br>
-		<a href="../BuildLogFiles/LED.py" download="LED.py">Download - LED.py</a><br>
-		<a href="../BuildLogFiles/HSHV4-student version.brd" download="HSHV4-student version.brd">Download - Modular Sensor Hat (Board File)</a><br>
-		<a href="../BuildLogFiles/HSHV4-student version.sch" download="HSHV4-student version.sch">Download -  Modular Sensor Hat (Schematic File)</a>
+		<a href="lmdm0067.github.io/exit.sh" download="exit.sh">Download - scanner.sh</a><br>
+		<a href="lmdm0067.github.io/test.py" download="test.py">Download - LED.py</a><br>
+		
 		</p>
 	</SECTION>
 	
